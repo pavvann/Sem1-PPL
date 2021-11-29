@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int armstrong(int n)
+void armstrong(int n)
 {
     int k;
     k = n;
@@ -15,12 +15,11 @@ int armstrong(int n)
         printf("%d is a armstrong number", n);
     else
         printf("%d is not an armstrong number", n);
-    return 0;
 }
 
-int coprime(int n)
+void coprime(int n)
 {
-    int m, l, sum = 0;
+    int m, l, sum = 0, hcf;
     m = n;
     while (m>0)
     {
@@ -29,23 +28,31 @@ int coprime(int n)
         m = m / 10;
     }
     int c;
-    if (m>=n)
+    if (sum>=n)
     {
-        c = m;
+        c = sum;
     }
     else
     {
         c = n;
     }
-    for (int i = 2; i<=c/2; i++)
+    for (int i = 1; i<=c/2; i++)
     {
-        if (m % i == 0 && n % i == 0)
-            printf("they are not coprime");
-    
-        else 
-            printf("they are coprime");
+        if (sum % i == 0 && n % i == 0)
+            hcf = i;
     }        
-    return 0;
+    if (hcf == 1)
+        printf("\n%d and %d are co-prime", n, sum);
+    else
+        printf("\n%d and %d are not co-prime", n, sum);
+}
+
+double factorial(double n)
+{
+    if (n<=1)
+        return 1;
+    else 
+        return (n*factorial(n-1));
 }
 
 int main()
@@ -53,7 +60,8 @@ int main()
     int n;
     printf("enter n: \n");
     scanf("%d", &n);
-    int armstrong(int n);
-    int coprime(int n);
-    return 0;
+    armstrong(n);
+    coprime(n);
+    printf("\nfactorial of %d = %.0lf", n, factorial(n));
+        return 0;
 }
