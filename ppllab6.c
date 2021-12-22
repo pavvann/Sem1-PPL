@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+//1
+/*
 void armstrong(int n)
 {
     int k;
@@ -62,8 +64,11 @@ int main()
     coprime(n);
     printf("\nfactorial of %d = %.0lf", n, factorial(n));
     return 0;
-}
+}*/
 
+
+
+/*
 //2
 int triangle_area(int base, int height)
 {
@@ -92,4 +97,4 @@ int main()
     swap(&x,&y);
     printf("\n%p", remainde(x,y));
     return 0;
-}
+}*/
